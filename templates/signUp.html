@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LOGIN</title>
+        <script type="text/javascript">
+            function signIn(){
+                var signForm = document.signForm;
+                var id = signForm.ID.value;
+                var pw = signForm.PW.value;
+
+                if(!id || !pw){
+                    alert("아이디와 비밀번호를 모두 입력해주세요.")
+                } else{
+                    signForm.submit();
+                }
+            }
+        {% if alertIt %}
+            alert("{{comment}}");
+        {% endif %}
+        </script>
+    </head>
+    <body>
+        <form name="signForm" action="../signUp" method="POST">
+            <fieldset style="width:200">
+                ID : <input type="text" name="ID"><br/>
+                PW : <input type="password" name="PW"><br/>
+                <br/>
+                <input type="button" onclick="signIn()" value="회원가입">
+            </fieldset>
+        </form>
+        <a href="../">로그인 하러 가기</a>
+    </body>
+</html>

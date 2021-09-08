@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LOGIN</title>
+        <script type="text/javascript">
+            function login(){
+                var loginForm = document.loginForm;
+                var id = loginForm.ID.value;
+                var pw = loginForm.PW.value;
+
+                if(!id || !pw){
+                    alert("아이디와 비밀번호를 모두 입력해주세요.")
+                } else{
+                    loginForm.submit();
+                }
+            }
+        {% if alertIt %}
+            alert("아이디 또는 패스워드가 일치하지 않습니다.");
+        {% endif %}
+        </script>
+    </head>
+    <body>
+        <form name="loginForm" action="/login" method="POST">
+            <fieldset style="width:200">
+                ID : <input type="text" name="ID"><br/>
+                PW : <input type="password" name="PW"><br/>
+                <br/>
+                <input type="button" onclick="login()" value="로그인">
+            </fieldset>
+        </form>
+        <a href="../signUpPage">회원가입</a>
+    </body>
+</html>
